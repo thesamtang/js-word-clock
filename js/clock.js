@@ -102,21 +102,9 @@ $(document).ready(function () {
                 $('.oclock').addClass('active');
                 $('.' + (hour).toString()).addClass('active');
             }
-            
-            
-            
-            
-            
-            
-            
-            
-                    
-            
         }
-
-
     }(window.clockJS = window.clockJS || {}, jQuery));
 
     clockJS.updateTime();
 
-})
+});

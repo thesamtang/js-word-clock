@@ -1,3 +1,6 @@
+body {
+    background-color: #111;
+}
 
 #clock-container {
     width: 660px;
@@ -19,13 +22,14 @@
     display: block;
     line-height: 60px;
     text-align: center;
-    color: #555;
-}
-
-body {
-    background-color: #111;
+    color: #333;
+    font-family: ‘Monda’, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 30px;
 }
 
 .active {
     color: #fff;
+    font-weight: 700;
+    text-shadow: 0 0 12px #FFF;
 }
