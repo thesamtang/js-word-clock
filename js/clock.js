@@ -26,9 +26,9 @@ $(document).ready(function () {
             
             // on the hour
             if (minute >= 58) {
-                $('.oclock').addClass('active');
                 $('.five').removeClass('active');
                 $('.to').removeClass('active');
+                $('.oclock').addClass('active');
                 
                 $('.' + hour.toString()).removeClass('active');
                 $('.' + (hour + 1).toString()).addClass('active');
@@ -43,6 +43,7 @@ $(document).ready(function () {
             }
             //ten to
             else if (minute >= 49) {
+                $('.a').removeClass('active');
                 $('.quarter').removeClass('active');
                 $('.ten').addClass('active');
                 $('.to').addClass('active');
@@ -52,17 +53,17 @@ $(document).ready(function () {
             // quarter to
             else if (minute >= 43) {
                 $('.twenty').removeClass('active');
+                $('.a').addClass('active');
                 $('.quarter').addClass('active');
                 $('.to').addClass('active');
-                $('.a').addClass('active');
                 
                 $('.' + (hour + 1).toString()).addClass('active');
             }
             // twenty to
             else if (minute >= 36) {
                 $('.half').removeClass('active');
-                $('.twenty').addClass('active');
                 $('.past').removeClass('active');
+                $('.twenty').addClass('active');
                 $('.to').addClass('active');
                 
                 $('.' + hour.toString()).removeClass('active');
@@ -78,6 +79,7 @@ $(document).ready(function () {
             }
             // twenty past
             else if (minute >= 19) {
+                $('.a').RemoveClass('active');
                 $('.quarter').removeClass('active');
                 $('.twenty').addClass('active');
                 $('.past').addClass('active');
@@ -87,9 +89,9 @@ $(document).ready(function () {
             // quarter past
             else if (minute >= 13) {
                 $('.ten').removeClass('active');
+                $('.a').addClass('active');
                 $('.quarter').addClass('active');
                 $('.past').addClass('active');
-                $('.a').addClass('active');
                 
                 $('.' + (hour).toString()).addClass('active');
             }
