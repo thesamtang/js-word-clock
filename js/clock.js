@@ -2,16 +2,28 @@
 
 $(document).ready(function () {
     (function (clockJS, $, undefined) {
-
-        var currentTime, hour, minute;
-
-        clockJS.updateTime = function () {
+        
+        var currentTime, hour, minute, interval;
+        
+        function getTimeValues() {
             currentTime = new Date();
             hour = currentTime.getHours() > 12 ? currentTime.getHours() - 12 : currentTime.getHours();
             minute = currentTime.getMinutes();
+        }
+        
+        function setTime() {
+            updateTime();
+            setTimeout(function () {
+                updateTime();
+                setInterval(function() {
+                    updateTime();
+                }, 60000);
+            }, interval * 1000);
+        }
 
-            console.log(hour + ' ' + minute);
-
+        function updateTime() {
+            getTimeValues();
+            
             // on the hour
             if (minute >= 58) {
                 $('.oclock').addClass('active');
@@ -103,8 +115,18 @@ $(document).ready(function () {
                 $('.' + (hour).toString()).addClass('active');
             }
         }
+        
+        clockJS.init = function () {
+            getTimeValues();
+            interval = 60 - currentTime.getSeconds();
+            if (interval === 60) {
+                interval = 0;
+            }
+            setTime();
+        }
+        
     }(window.clockJS = window.clockJS || {}, jQuery));
 
-    clockJS.updateTime();
+    clockJS.init();
 
 });
